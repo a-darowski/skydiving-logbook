@@ -1,94 +1,98 @@
-# 10x Astro Starter
+# Skydiving Logbook
 
-A modern, opinionated starter template for building fast, accessible, and AI-friendly web applications.
+A modern web application that replaces traditional paper logbooks for skydivers, streamlining jump recording with auto-incremented jump numbers, pre-filled repetitive fields.
+
+---
+
+## Table of Contents
+
+1. [Tech Stack](#tech-stack)
+2. [Getting Started Locally](#getting-started-locally)
+3. [Available Scripts](#available-scripts)
+4. [Project Scope](#project-scope)
+5. [Project Status](#project-status)
+6. [License](#license)
+
+---
 
 ## Tech Stack
 
-- [Astro](https://astro.build/) v5.5.5 - Modern web framework for building fast, content-focused websites
-- [React](https://react.dev/) v19.0.0 - UI library for building interactive components
-- [TypeScript](https://www.typescriptlang.org/) v5 - Type-safe JavaScript
-- [Tailwind CSS](https://tailwindcss.com/) v4.0.17 - Utility-first CSS framework
+- **Framework:** [Astro 5](https://astro.build/)
+- **UI:** React 19 + shadcn/ui + Tailwind CSS 4
+- **Language:** TypeScript 5
+- **Backend & Auth:** Supabase (PostgreSQL, Row-Level Security)
+- **Build Tooling:** Vite, ESLint, Prettier, Husky + lint-staged
+- **CI/CD:** GitHub Actions (automatic build & deployment)
 
-## Prerequisites
+---
 
-- Node.js v22.14.0 (as specified in `.nvmrc`)
-- npm (comes with Node.js)
+## Getting Started Locally
 
-## Getting Started
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/przeprogramowani/10x-astro-starter.git
-cd 10x-astro-starter
-```
-
-2. Install dependencies:
+> Requires **Node 22.14.0** (see `.nvmrc`). Use `nvm` or `fnm` to match the project version.
 
 ```bash
-npm install
-```
+# 1. Clone the repo
+git clone https://github.com/<your-org>/skydiving-logbook.git
+cd skydiving-logbook
 
-3. Run the development server:
+# 2. Install dependencies
+npm install     # or pnpm install / yarn install
 
-```bash
+# 3. Start the dev server
 npm run dev
+
+# 4. Open the app
+# The server runs on http://localhost:4321 by default
 ```
 
-4. Build for production:
+Optional:
 
 ```bash
-npm run build
+# Run ESLint
+auth npm run lint
+# Format code with Prettier
+npm run format
 ```
+
+---
 
 ## Available Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-- `npm run lint:fix` - Fix ESLint issues
+| Command            | Description                                |
+| ------------------ | ------------------------------------------ |
+| `npm run dev`      | Start the Astro dev server with hot reload |
+| `npm run build`    | Generate the production build              |
+| `npm run preview`  | Preview the production build locally       |
+| `npm run astro`    | Direct access to the Astro CLI             |
+| `npm run lint`     | Run ESLint on all source files             |
+| `npm run lint:fix` | Run ESLint with `--fix`                    |
+| `npm run format`   | Format files with Prettier                 |
 
-## Project Structure
+---
 
-```md
-.
-├── src/
-│   ├── layouts/    # Astro layouts
-│   ├── pages/      # Astro pages
-│   │   └── api/    # API endpoints
-│   ├── components/ # UI components (Astro & React)
-│   └── assets/     # Static assets
-├── public/         # Public assets
-```
+## Project Scope
 
-## AI Development Support
+**In Scope (MVP)**
 
-This project is configured with AI development tools to enhance the development experience, providing guidelines for:
+- User profile with personalized data (canopy model and size, exit weight, default dropzone)
+- Supabase authentication (email & password)
+- Server-side auto-incremented jump numbers
+- Batch entry modal with inline edit/delete before save
+- Sortable & filterable logbook table
+- Default dropzone data
 
-- Project structure
-- Coding practices
-- Frontend development
-- Styling with Tailwind
-- Accessibility best practices
-- Astro and React guidelines
+For full functional requirements see [PRD](./.ai/prd.md).
 
-### Cursor IDE
+---
 
-The project includes AI rules in `.cursor/rules/` directory that help Cursor IDE understand the project structure and provide better code suggestions.
+## Project Status
 
-### GitHub Copilot
+🚧 **Active development.** Core MVP features are being implemented.
 
-AI instructions for GitHub Copilot are available in `.github/copilot-instructions.md`
-
-### Windsurf
-
-The `.windsurfrules` file contains AI configuration for Windsurf.
-
-## Contributing
-
-Please follow the AI guidelines and coding practices defined in the AI configuration files when contributing to this project.
+---
 
 ## License
 
-MIT
+This project is currently **unlicensed**.
+
+---
